@@ -1,0 +1,57 @@
+<script>
+    // Class containing the method to access characters
+// class Solution {
+    // Function to print each character of a string
+//    function accessCharacters({s}) {
+//         // Loop through each index
+//         for (let i = 0; i < s.length; i++) {
+//             // Print the character at index i
+//             console.log(s[i]);
+//         }
+//     }
+
+//     accessCharacters({s: "Hello"});
+// }
+
+// // Driver code
+// const obj = new Solution();
+// // Input string
+// const s = "Hello";
+// // Call the function
+// console.log(obj.accessCharacters(s));
+
+// Class containing the compareStrings function
+class Solution {
+    // Function to compare two strings
+    compareStrings(str1, str2) {
+        // Return true if strings are equal
+        return str1 === str2;
+    }
+}
+
+// Driver code
+const readline = require("readline");
+
+// Create interface for input
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+let inputs = [];
+
+// Read input lines
+rl.on("line", (line) => {
+    inputs.push(line);
+    if (inputs.length === 2) {
+        const obj = new Solution();
+        if (obj.compareStrings(inputs[0], inputs[1])) {
+            console.log("Strings are equal");
+        } else {
+            console.log("Strings are not equal");
+        }
+        rl.close();
+    }
+});
+
+</script>

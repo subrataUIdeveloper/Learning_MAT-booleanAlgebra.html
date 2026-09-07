@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+
+<p id="root"></p>
+
+<p id="nintyDegangleTrangle"></p>
+<script>
+// squear and rectangle pattern
+function pattern(N){
+let result = "";
+	for(let i = 0; i< N; i++){
+		let row = " ";
+		for(let j = 0; j < N; j++){
+			row += '*';
+		}
+	result += row + "<br>";
+	}
+return result;
+}
+
+//console.log(pattern(9));
+
+document.getElementById("root").innerHTML = pattern(5);
+
+//trancle in 90 deg pattern
+function nintyDegangleTrangle(Q){
+	let result = "";
+	for(let i = 1; i <= Q; i++){
+		let row = " ";
+		for(let j = 1; j <= i; j++ ){
+			 row += '*';
+		}
+
+		result += row + '</br>'
+	}
+
+	return result;
+}
+document.getElementById("nintyDegangleTrangle").innerHTML = nintyDegangleTrangle(6);
+
+
+//trancle in 90 deg pattern
+function opositTrangle(Q){
+	let result = "";
+	for(let i = 1; i <= Q; i++){
+		let row = " ";
+		for(let j = 1; j <= i; j-- ){
+			 row += '*';
+		}
+
+		result += row + '</br>'
+	}
+
+	return result;
+}
+
+
+console.log(opositTrangle(6));
+
+
+</script>
+</body>
+</html>

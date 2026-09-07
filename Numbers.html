@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+function countDight(n){
+	/*let count = 0;
+
+	while(n > 0){
+		count += 1;
+		n = Math.floor(n/10);
+	}
+	return count ;*/
+
+	let count = Math.floor(Math.log10(n) + 1);
+	 return count;
+}
+//console.log(" Number count:",countDight(2934));
+
+class Reverse{
+
+ reverseNumber(n){
+	let reversed = 0;
+
+	while(n > 0){
+		let lastDigit = n % 10;
+		reversed = reversed * 10 + lastDigit;
+		n = Math.floor(n/10);
+ 	}
+		return reversed;
+		
+	}
+}
+
+const obj = new Reverse();
+const num = 12345;
+//console.log(" Reversed number:",obj.reverseNumber(num));
+
+
+class ReverseString{
+	reverseString(str){
+		let reversed = '';
+		for(let i = str.length - 1; i >= 0; i--){
+			reversed += str[i];
+		}
+		return reversed;
+	}
+}
+
+const reverseObj = new ReverseString();
+const str = "Subrata";
+
+//console.log("Reverse String:", reverseObj.reverseString(str));
+
+class Palindrome{
+	checkPalindrome(n){
+	let reverseNumber = 0;
+	let originalNumber = n;
+	
+	while(n > 0){
+		let lastDigit = n % 10;
+		reverseNumber = reverseNumber * 10 + lastDigit;
+		n = Math.floor(n/10);
+	}
+	
+		if(originalNumber === reverseNumber){
+			return "The number is a palindrome.";
+		}else{
+			return "The number is not a palindrome.";
+		}
+	}
+}
+
+const palindromeObj = new Palindrome();
+const number = 12321;
+//console.log("Palindrome check:", palindromeObj.checkPalindrome(number));
+
+
+class GCD{
+	findGCD(n1, n2){
+		let gcd = 1;
+		for(let i = 1; i <= Math.min(n1, n2); i++){
+			if(n1 % i === 0 && n2 % i === 0){
+				gcd = i;
+			}
+		}
+		return gcd;
+	}
+}
+
+const gcdObj = new GCD();
+const num1 = 12;
+const num2 = 18;	
+
+//console.log("GCD of", num1, num2, "is:", gcdObj.findGCD(num1, num2));
+
+class amstrongNumber{
+	
+	findAmstrongNumber(n){
+		let sum = 0;
+		let originalNumber = n;
+		let temp = n;
+		let countDight = originalNumber === 0 ? 1 : Math.floor(Math.log10(originalNumber) + 1);
+		// let countDight = originalNumber.toString().length;
+
+		while(temp > 0){
+			let lastDigit = temp % 10;
+			sum += Math.pow(lastDigit, countDight);
+			temp = Math.floor(temp/10);
+		}
+		if(sum === originalNumber){
+			return "The number is an Amstrong number.";
+		}else{
+			return "The number is not an Amstrong number.";
+		}
+		}
+	}
+
+const amstrongObj =  new amstrongNumber();
+const number1 = 153;
+//console.log("Amstrong number check:", amstrongObj.findAmstrongNumber(number1));
+
+
+class Divisor{
+	
+	findDivisor(n){
+		let divisors = [];
+		for(let i = 1; i <= n; i++){
+			if(n % i === 0){
+				divisors.push(i);
+			}
+		}
+		return divisors;
+	}	
+}
+
+const divisorObj = new Divisor();
+const number2 = 12;
+//console.log("Divisors of", number2, "are:", divisorObj.findDivisor(number2));
+
+
+class PrimeNumber{
+	primeCheck(n){
+		let count = 0;
+		for(let i = 1; i <= n; i++){
+			if(n % i === 0){
+				count++;
+			}
+		}
+		if(count === 2){
+			return "The number is a prime number.";
+		}else if(n < 1){
+			return "The number is not a prime number.";
+		}else{
+			return "The number is not a prime number.";
+		}
+	}
+}
+
+const primeObj = new PrimeNumber();
+const number3 = 1483;
+//console.log("Prime number check:", primeObj.primeCheck(number3));
+
+class Recursive{
+	printName(name, count, N){
+		if(count === N){
+			return;
+		}
+
+		console.log(name);
+
+		this.printName(name, count + 1, N);
+	}
+}
+
+const recursiveObj = new Recursive();
+const name = "Subrata";	
+const N = 5;
+console.log("Recursive print name:", recursiveObj.printName(name, 0, N)); 
+
+function commentChallenge(){
+	let a = 18;
+
+	function test(){
+		console.log("Value of a inside test function:", a);
+		let a = 20;	
+		console.log("Value of a inside test function after declaration:", a);
+	}
+	return test();
+}
+
+console.log("Comment challenge output:", commentChallenge(a));
+
+
+</script>
+</body>
+</html>
